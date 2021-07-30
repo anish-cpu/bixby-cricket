@@ -1,0 +1,5 @@
+train (t-332n44pxffcr7nuez9fgut89k) {
+  utterance ("[g:Bowling] Find bowling stats of (Sachin Tendulkar)[v:PlayerName]")
+  enabled (false)
+  last-modified (1626679084924)
+}

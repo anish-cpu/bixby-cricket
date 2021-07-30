@@ -1,0 +1,15 @@
+structure (Batting) {
+  description (Batting Stats of the player)
+  property (T20I) {
+    type (T20I)
+    min (Optional) max (One)
+  }
+  property (ODI) {
+    type (ODI)
+    min (Optional) max (One)
+  }
+  property (Test) {
+    type (Test)
+    min (Optional) max (One)
+  }
+}

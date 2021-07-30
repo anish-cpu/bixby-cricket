@@ -1,0 +1,61 @@
+result-view{
+  match{
+    MatchDetails(match)
+  }
+
+  render {
+    if (size(match)>1){
+      list-of (match) {
+        navigation-mode {
+          if ($handsFree){
+            read-many {
+              page-size (2)
+              list-summary ("I found total #{size(match)} matches meeting your search.")
+              page-content {
+                page-selection-question(Do you want to view any of these matches?)
+                underflow-statement (There is no other match I showed previously.)
+                item-selection-question (Which one?)
+                overflow-statement (That's all. No more matches meet your search.)
+              }
+            }
+          }
+        }
+      
+        where-each (item) {
+          layout-macro (Match-Summary) {
+            param (match) {
+              expression (item)
+            }
+          }
+        }
+      }
+    }
+    else-if(size(match)==1){
+      layout-macro (Match-Details) {
+        param (match) {
+          expression (match)
+        }
+      }
+    }
+    
+    else{
+      layout{
+        section{
+          content{
+            title-card {
+              title-area {
+                halign(Center)
+                slot1 {
+                  paragraph {
+                    style(Title_S)
+                    value("No live matches around :(")
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

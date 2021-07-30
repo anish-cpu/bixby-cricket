@@ -1,0 +1,23 @@
+structure (VisitorTeamDetails) {
+  description (Score and other details of the visitor team)
+  property (Name) {
+    type (VisitorTeamName)
+    min (Required) max (One)
+  }
+  property(ImageUrl){
+    type (ImageUrl)
+    min(Required) max(One)
+  }
+  property(Runs){
+    type (Runs)
+    min(Optional) max(One)
+  }
+  property(Wickets){
+    type (Wickets)
+    min(Optional) max(One)
+  }
+  property(Overs){
+    type (Overs)
+    min(Optional) max(One)
+  }
+}

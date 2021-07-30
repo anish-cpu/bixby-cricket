@@ -1,0 +1,43 @@
+structure (PlayerSummary) {
+  description (__DESCRIPTION__)
+  property (Profile) {
+    type (Note)
+    min (Optional) max (One)
+  }
+  property (ImageUrl) {
+    type (ImageUrl)
+    min (Optional) max (One)
+  }
+  property (BattingStyle) {
+    type (BattingStyle)
+    min (Optional) max (One)
+  }
+  property (BowlingStyle) {
+    type (BowlingStyle)
+    min (Optional) max (One)
+  }
+  property (Age) {
+    type (Age)
+    min (Optional) max (One)
+  }
+  property (Name) {
+    type (PlayerName)
+    min (Required) max (One)
+  }
+  property (PlayerCountry) {
+    type (PlayerCountry)
+    min (Optional) max (One)
+  }
+  property (PlayingRole) {
+    type (PlayingRole)
+    min (Optional) max (One)
+  }
+  property (Bowling) {
+    type (Bowling)
+    min (Optional) max (One)
+  }
+  property (Batting) {
+    type (Batting)
+    min (Optional) max (One)
+  }
+}

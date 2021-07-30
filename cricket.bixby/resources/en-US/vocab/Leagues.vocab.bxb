@@ -1,0 +1,5 @@
+vocab (League) {
+  "Twenty20 International" { "2020" "twenty-twenty" "T20I" "T20"}
+  "Big Bash League" { "BBL" "Big Bash"}
+  "CSA T20 Challenge" { "CSA" "CSA T20" }
+}

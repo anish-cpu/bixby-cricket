@@ -1,0 +1,63 @@
+structure (ODI) {
+  description (ODI details of a player)
+  property (FiveW) {
+    type (FiveW)
+    min (Optional) max (One)
+  }
+  property (FourW) {
+    type (FourW)
+    min (Optional) max (One)
+  }
+  property (SR) {
+    type (SR)
+    min (Optional) max (One)
+  }
+  property (Econ) {
+    type (Econ)
+    min (Optional) max (One)
+  }
+  property (Ave) {
+    type (Ave)
+    min (Optional) max (One)
+  }
+  property (Wkts) {
+    type (Wkts)
+    min (Optional) max (One)
+  }
+  property (Runs) {
+    type (Runs)
+    min (Optional) max (One)
+  }
+  property (Balls) {
+    type (Balls)
+    min (Optional) max (One)
+  }
+  property (Mat) {
+    type (Mat)
+    min (Optional) max (One)
+  }
+  property (Fifties) {
+    type (Fifties)
+    min (Optional) max (One)
+  }
+  property (Hundreds) {
+    type (Hundreds)
+    min (Optional) max (One)
+  }
+  property (Sixes) {
+    type (Sixes)
+    min (Optional) max (One)
+  }
+  property (Fours) {
+    type (Fours)
+    min (Optional) max (One)
+  }
+  property (HS) {
+    type (HS)
+    min (Optional) max (One)
+  }
+  property (NO) {
+    type (NO)
+    min (Optional) max (One)
+  }
+}

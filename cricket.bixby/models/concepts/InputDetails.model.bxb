@@ -1,0 +1,28 @@
+structure (InputDetails) {
+  description (Stores the inputs from the user)
+   property (LocalTeamName){
+    type (LocalTeamName)
+    min (Optional)
+    max (One)
+  }
+  property (VisitorTeamName){
+    type (VisitorTeamName)
+    min (Optional)
+    max (One)
+  }
+  property (Type){
+    type (Type)
+    min (Optional)
+    max (One)
+  }
+  property(League){
+    type(League)
+    min(Optional)
+    max(One)
+  }
+  property(Country){
+    type(geo.SearchRegion)
+    min (Optional)
+    max (One)
+  }
+}

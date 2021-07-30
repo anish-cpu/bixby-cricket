@@ -1,0 +1,85 @@
+layout-macro-def (Match-Summary) {
+  params {
+    param (match) {
+      type (MatchDetails)
+      min (Required) max (Many)
+    }
+  }
+
+  content{
+    title-card{
+      title-area {
+        slot2{               //LocalTeamN vs VisitorTeam, match round
+          single-line {
+            image {
+              style(Detail_M)
+              url("#{value(match.LocalTeamDetails.ImageUrl)}")
+            }
+            spacer {
+              size(Small)
+            }
+            text {
+              style(Detail_L)
+              value("#{value(match.LocalTeamDetails.Name)}")
+            }
+            spacer {
+              size(Medium)
+            }
+            text {
+              style(Detail_L_Soft)
+              value("vs")
+            }
+            spacer {
+              size(Medium)
+            }
+            image {
+              style(Detail_M)
+              url("#{value(match.VisitorTeamDetails.ImageUrl)}")
+            }
+            spacer {
+              size(Small)
+            }
+            text {
+              style(Detail_L)
+              value("#{value(match.VisitorTeamDetails.Name)}")
+            }
+            spacer {
+              size(Large)
+            }
+            text {
+              style(Detail_L)
+              color(Blue)
+              value("• [#{value(match.Round)}]")
+            }
+          }
+        }
+        slot1{              //Live status
+          single-line {
+            if(true){
+            // if(m.Live==true){
+              text {
+                style(Title_XS)
+                color(Green)
+
+                value("• Live")
+              }
+              spacer {
+                size(Small)
+              }
+            }
+          }
+        }
+        slot5{              //Match Status(Runs needed to win etc.)
+          paragraph {
+            style(Detail_L_Soft)
+            value("[#{value(match.Note)}]")
+          }
+        }
+        
+      }
+      on-click {
+        view-for (match)
+      }
+    }
+  }
+}

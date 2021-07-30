@@ -1,0 +1,94 @@
+result-view{
+  match{
+    Batting(this){
+      from-property{
+        PlayerDetails(b)
+      }
+    }
+  }
+  render{
+    layout{
+      section{
+        content{
+          paragraph{
+            value("Batting Statistics:")
+            style(Title_M)
+          }
+        }
+      }
+      section{
+        title{
+          template ("ODIs")
+        }
+        content{
+          paragraph{
+            value("[Matches:  #{value(this.ODI.Mat)}] [SR:  #{value(this.ODI.SR)}] [Average:  #{value(this.ODI.Ave)}]")
+          }
+          paragraph{
+            value("[Runs:  #{value(this.ODI.Runs)}] [HS:  #{value(this.ODI.HS)}] [NO:  #{value(this.ODI.NO)}]")
+          }
+          paragraph{
+            value("[100s:  #{value(this.ODI.Hundreds)}] [50s:  #{value(this.ODI.Fifties)}]")
+          }
+          paragraph{
+            value("[6s:  #{value(this.ODI.Sixes)}] [4s:  #{value(this.ODI.Fours)}]")
+          }
+        }
+      }
+      section{
+        title{
+          template ("T20Is")
+        }
+        content{
+          paragraph{
+            value("[Matches:  #{value(this.T20I.Mat)}] [SR:  #{value(this.T20I.SR)}] [Average:  #{value(this.T20I.Ave)}]")
+          }
+          paragraph{
+            value("[Runs:  #{value(this.T20I.Runs)}] [HS:  #{value(this.T20I.HS)}] [NO:  #{value(this.T20I.NO)}]")
+          }
+          paragraph{
+            value("[100s:  #{value(this.T20I.Hundreds)}] [50s:  #{value(this.T20I.Fifties)}]")
+          }
+          paragraph{
+            value("[6s:  #{value(this.T20I.Sixes)}] [4s:  #{value(this.T20I.Fours)}]")
+          }
+        }
+      }
+      section{
+        title{
+          template ("Tests")
+        }
+        content{
+          paragraph{
+            value("[Matches:  #{value(this.Test.Mat)}] [SR:  #{value(this.Test.SR)}] [Average:  #{value(this.Test.Ave)}]")
+          }
+          paragraph{
+            value("[Runs:  #{value(this.Test.Runs)}] [HS:  #{value(this.Test.HS)}] [NO:  #{value(this.Test.NO)}]")
+          }
+          paragraph{
+            value("[100s:  #{value(this.Test.Hundreds)}] [50s:  #{value(this.Test.Fifties)}]")
+          }
+          paragraph{
+            value("[6s:  #{value(this.Test.Sixes)}] [4s:  #{value(this.Test.Fours)}]")
+          }
+        }
+      }
+    }
+  }
+  // followup{
+  //   prompt{
+  //     dialog("Do you want to view his bowling stats too?")
+  //     on-confirm{
+  //       intent{
+  //         goal{ 
+  //           Bowling
+  //           @context (Continuation)
+  //         }
+  //       }
+  //     }
+  //     on-deny{
+  //       message("Okay")
+  //     }
+  //   }
+  // }
+}

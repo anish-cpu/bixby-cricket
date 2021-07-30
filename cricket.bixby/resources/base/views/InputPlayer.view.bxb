@@ -1,0 +1,25 @@
+input-view{
+  match: PlayerName
+  message("Which player do you want to search?")
+
+  render{
+    form{
+      elements{
+        text-input{
+          id(name)
+          type(PlayerName)
+          label(Enter a name)
+          max-length (50)
+        }
+      }
+      on-submit{
+        goal: FindPlayer
+        value: viv.core.FormElement(name)
+        // route: FindPlayer
+      }
+      submit-button{
+        template (Search)
+      }
+    }
+  }
+}

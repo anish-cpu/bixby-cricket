@@ -1,0 +1,48 @@
+layout-macro-def (Player-Summary) {
+  params {
+    param (player) {
+      type (PlayerDetails)
+      min (Required) max (Many)
+    }
+  }
+
+  content{
+    image-card{
+      image-url("[#{value(player.ImageUrl)}]")
+      image-object-fit (Contain)
+      text-position(Below)
+      title-area {
+        halign (Center)
+        slot1{               // name
+          single-line {
+            text {
+              style(Detail_XL)
+              value("#{value(player.Name)}")
+            }
+            spacer {
+              size(Medium)
+            }
+          }
+        }
+        slot2{              //Nationality, role
+          single-line {
+            text {
+              style(Detail_L)
+              value("[#{value(player.PlayerCountry)}] ")
+            }
+            spacer {
+              size(Small)
+            }
+            text {
+              style(Detail_L_Soft)
+              value("[•#{value(player.PlayingRole)}]")
+            }
+          }
+        }
+      }
+      on-click {
+        view-for (player)
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+train (t-n50xn1k6e2mrp7xu7v2wwkhvw) {
+  utterance ("[g:FindMatchScore] Search (Twenty20 International)[v:League:'Twenty20 International'] matches in (South Africa)[v:geo.SearchTerm]")
+  last-modified (1625757957524)
+}

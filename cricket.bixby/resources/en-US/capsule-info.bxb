@@ -1,0 +1,16 @@
+capsule-info {
+  display-name (Cricket)
+  developer-name (Example Developer)
+  description ("Provides live scores and results of past or ongoing cricket matches.")
+  dispatch-name (Cricket Capsule)
+  search-keywords{
+    keyword (cricket)
+  }
+  // Set your own image for your capsule's icon
+  icon-asset (images/icons/bixby_launcher.png)
+  requested-permissions {
+    permission (device-location-access) {
+      justification (Your location will be used to find matches nearby)
+    }
+  }
+}

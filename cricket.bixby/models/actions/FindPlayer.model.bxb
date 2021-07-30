@@ -1,0 +1,14 @@
+action (FindPlayer) {
+  // confirm{
+  //   by (core.Confirmation)
+  // }
+  description (Finds all players matching the user's input)
+  type(Search)
+  collect {
+    input (PlayerName) {
+      type (PlayerName)
+      min (Required) max (One)
+    }
+  }
+  output (PlayerDetails)
+}

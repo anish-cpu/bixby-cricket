@@ -1,0 +1,53 @@
+result-view {
+  match: InputDetails (m)
+
+  // message ("Here's my struct: {x='#{value(this.x)}', y= #{value(this.y)}}")
+
+  render {
+    nothing
+  }
+  
+  conversation-drivers {
+    conversation-driver {
+      template ("Search [#{value(m.League)}] matches [of #{value(m.LocalTeamName)}] [and #{value(m.VisitorTeamName)}] in [#{value(m.Country.country.name)}]")
+    }
+  }
+
+  followup {
+    if (exists(m.Country) && m.Country.searchType!="Country"){
+
+      prompt {
+        dialog ("[You have searched for matches in #{value(m.Country.locality.name)}.] I can only show country-wise matches. Do you want to search for matches in [#{value(m.Country.country.name)}] instead?")
+        on-confirm {
+          intent {
+              goal: MatchDetails
+              value{$expr(m.Country)}
+              value{$expr(m.LocalTeamName)}
+              value{$expr(m.VisitorTeamName)}
+              value{$expr(m.League)}
+          }
+        }
+        on-deny {
+          message (Sorry, I can only show country-wise matches.)
+        }
+      }
+    }
+    else-if (exists(m)){
+      prompt {
+        dialog ("Do you want to search [#{value(m.League)}] matches [of #{value(m.LocalTeamName)}] [and #{value(m.VisitorTeamName)}] [only in #{value(m.Country.country.name)}]?")
+        on-confirm {
+          intent {
+            goal: MatchDetails
+            value{$expr(m.Country)}
+            value{$expr(m.LocalTeamName)}
+            value{$expr(m.VisitorTeamName)}
+            value{$expr(m.League)}
+          }
+        }
+        on-deny {
+          message (Okay. I stopped searching. What do you want to search?)
+        }
+      }
+    }
+  }
+}

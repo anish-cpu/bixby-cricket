@@ -1,0 +1,6 @@
+dialog (Progress) {
+  match {
+    FindMatchScore (action)
+  }
+  template("Finding live[ #{value(action.League)}] matches[ of #{value (action.LocalTeamName)}] [and #{value (action.VisitorTeamName)}] [in #{value (action.Country.country.name)}] ...")
+}

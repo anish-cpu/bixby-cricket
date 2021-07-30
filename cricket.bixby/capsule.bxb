@@ -1,0 +1,36 @@
+capsule {
+  id (cricket.bixby)
+  version (0.1.0)
+  format (3)
+  targets {
+    target (bixby-mobile-en-US)
+  }
+  runtime-version (9)
+  capsule-imports {
+		import (viv.core) {
+			as (core)
+		}
+		// import (viv.time) {
+		// 	as (time)
+		// 	version (3.6.6)
+		// }
+    import(viv.geo){
+      as (geo)
+      version(9.28.2)
+    }	
+	}
+  permissions {
+    device-location-access
+  }
+  
+  store-sections{
+    section (Sports)
+    section (GamesAndFun)
+  }
+  store-countries {
+    all
+  }
+  device-models {
+    all
+  }
+}

@@ -1,0 +1,33 @@
+result-view{
+   match {
+    _ (this) {
+      from-property{
+        _ (p)
+        }
+    }
+  }
+  message("[#{value(this)}]")
+  render{
+    nothing
+  }
+  followup{
+    if(!exists(this)){
+      prompt{
+        dialog("I did not find anything. Do you want to search for another player?")
+        on-confirm{
+          intent{
+            goal{
+              FindPlayer
+            }
+          }
+        }
+        on-deny{
+          message{
+            template ("Okay")
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,49 @@
+action (FindMatchScore) {
+  description (Finds match details according to user inputs)
+  collect{
+    input (LocalTeamName){
+      type(LocalTeamName)
+      min(Optional)
+      max(One)
+      // min-preferred (Required)
+    }
+    input (VisitorTeamName){
+      type(VisitorTeamName)
+      min(Optional)
+      max(One)
+      // min-preferred (Required)
+    }
+    input (League){
+      type(League)
+      min(Optional)
+      max(One)
+      // min-preferred (Required)
+    }
+    input (Country){
+      type(geo.SearchRegion)
+      //  default-init {
+      //   intent {
+      //     goal: geo.CountryDivisionName
+      //     route: geo.CurrentLocation
+      //   }
+      // }
+      min(Optional)
+      max(One)
+      //// min-preferred (Required)
+      // validate{
+      //   if (exists(Country) && Country.searchType!="Country") {
+          
+      //     replan {
+      //       dialog ("Showing matches in [#{value(Country.country.name)}], since you searched for matches in [#{value(Country.namedPoint.name)}], [#{value(Country.country.name)}]")
+      //       intent {
+      //         goal: FindMatchScore
+      //         // value: Country
+      //       }
+      //     }
+      //   }
+      // }
+    }
+  }
+  type(Search)
+  output (MatchDetails)
+}

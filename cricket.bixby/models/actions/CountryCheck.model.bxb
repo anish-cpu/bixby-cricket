@@ -1,0 +1,29 @@
+action (CountryCheck) {
+  type(Search)
+  description (Check if user has entered a country name)
+  collect {
+    input (Country) {
+      type (geo.SearchRegion)
+      min (Optional) max (One)
+    }
+    input (LocalTeamName){
+      type(LocalTeamName)
+      min(Optional)
+      max(One)
+      // min-preferred (Required)
+    }
+    input (VisitorTeamName){
+      type(VisitorTeamName)
+      min(Optional)
+      max(One)
+      // min-preferred (Required)
+    }
+    input (League){
+      type(League)
+      min(Optional)
+      max(One)
+      // min-preferred (Required)
+    }
+  }
+  output (InputDetails)
+}

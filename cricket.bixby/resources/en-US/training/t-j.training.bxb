@@ -1,0 +1,12 @@
+train (t-jz894aenww25rx3ks6veeecfu) {
+  utterance ("[g:FindMatchScore] Search matches of (West Indies)[v:LocalTeamName] in (New Zealand)[v:geo.SearchTerm]")
+  last-modified (1625758847005)
+}
+train (t-jr1gn1ts20vtweh60r621yp1t) {
+  utterance ("[g:Runs] How many runs has (Sachin Tendulkar)[v:PlayerName] (scored)[r:Batting] in (ODIs)[r:ODI]")
+  last-modified (1626344747215)
+}
+train (t-j2bvzmrr6ktys6v3i3024evp2) {
+  utterance ([g:Bowling:continue:FindPlayer] Find his bowing statistics)
+  last-modified (1627017109597)
+}

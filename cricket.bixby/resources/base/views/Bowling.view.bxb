@@ -1,0 +1,94 @@
+result-view{
+  match{
+    Bowling(this){
+      from-property{
+        _(b)
+      }
+    }
+  }
+  render{
+    layout{
+      section{
+        content{
+          paragraph{
+            value("Bowling Statistics:")
+            style(Title_M)
+          }
+        }
+      }
+      section{
+        title{
+          template ("ODIs")
+        }
+        content{
+          paragraph{
+            value("[Matches:  #{value(this.ODI.Mat)}] [ Economy:  #{value(this.ODI.Econ)}] ")
+          }
+          paragraph{
+            value("[Wickets:  #{value(this.ODI.Wkts)}][ Average:  #{value(this.ODI.Ave)}]")
+          }
+          paragraph{
+            value("[Runs:  #{value(this.ODI.Runs)}] [ Balls:  #{value(this.ODI.Balls)}][ SR:  #{value(this.ODI.SR)}]")
+          }
+          paragraph{
+            value("[5w:  #{value(this.ODI.FiveW)}] [ 4w:  #{value(this.ODI.FourW)}]")
+          }
+        }
+      }
+      section{
+        title{
+          template ("T20Is")
+        }
+        content{
+          paragraph{
+            value("[Matches:  #{value(this.T20I.Mat)}] [ Economy:  #{value(this.T20I.Econ)}] ")
+          }
+          paragraph{
+            value("[Wickets:  #{value(this.T20I.Wkts)}][ Average:  #{value(this.T20I.Ave)}]")
+          }
+          paragraph{
+            value("[Runs:  #{value(this.T20I.Runs)}] [ Balls:  #{value(this.T20I.Balls)}][ SR:  #{value(this.T20I.SR)}]")
+          }
+          paragraph{
+            value("[5w:  #{value(this.T20I.FiveW)}] [ 4w:  #{value(this.T20I.FourW)}]")
+          }
+        }
+      }
+      section{
+        title{
+          template ("Tests")
+        }
+        content{
+          paragraph{
+            value("[Matches:  #{value(this.Test.Mat)}] [ Economy:  #{value(this.Test.Econ)}] ")
+          }
+          paragraph{
+            value("[Wickets:  #{value(this.Test.Wkts)}][ Average:  #{value(this.Test.Ave)}]")
+          }
+          paragraph{
+            value("[Runs:  #{value(this.Test.Runs)}] [ Balls:  #{value(this.Test.Balls)}][ SR:  #{value(this.Test.SR)}]")
+          }
+          paragraph{
+            value("[5w:  #{value(this.Test.FiveW)}] [ 4w:  #{value(this.Test.FourW)}]")
+          }
+        }
+      }
+    }
+  }
+  // followup{
+  //   prompt{
+  //     dialog("Do you want to search another player?")
+  //     on-confirm{
+  //       intent{
+  //         goal{ 
+  //           FindPlayer
+  //         }
+  //         route: PlayerName
+  //       }
+  //     }
+  //     on-deny{
+  //       message("Okay")
+  //     }
+  //   }
+  // }
+}

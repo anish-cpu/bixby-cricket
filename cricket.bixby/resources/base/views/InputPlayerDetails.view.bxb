@@ -1,0 +1,48 @@
+input-view{
+  match: PlayerDetails(this)
+
+  // message("I found #{size(this)} players matching your search. Which one?")
+  render{
+    if(size(this)>1){
+      selection-of (this){
+        navigation-mode {
+            if ($handsFree){
+              read-many {
+                page-size (2)
+                list-summary ("I found #{size(this)} players matching your search.")
+                page-content {
+                  page-selection-question(Where you looking for any of these players?)
+                  underflow-statement (There is no other player that I showed previously.)
+                  item-selection-question (Which one?)
+                  overflow-statement (That's all. No more players meet your search.)
+                }
+              }
+            }
+        }
+        select-button-text{
+          template ("View")
+        }
+        where-each (a){
+          layout-macro (Player-Summary-Input){
+            
+            param(player){
+              expression (a)
+            }
+          }
+        }
+      }
+    }
+    else{
+        layout-macro (Player-Summary-Input){
+          // select-button-text("Batting Details")
+          select-button-text{
+            template (View Details)
+          }
+
+          param(player){
+            expression (this)
+          }
+          }
+      }
+  }
+}

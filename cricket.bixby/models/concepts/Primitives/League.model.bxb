@@ -1,0 +1,6 @@
+enum (League) {
+  description (Name of the league)
+  symbol (Twenty20 International)
+  symbol (Big Bash League)
+  symbol(CSA T20 Challenge)
+}

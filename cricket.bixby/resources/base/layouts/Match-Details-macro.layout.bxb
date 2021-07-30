@@ -1,0 +1,127 @@
+layout-macro-def (Match-Details) {
+  params {
+    param (match) {
+      type (MatchSummary)
+      min (Required) max (One)
+    }
+  }
+
+  content{
+    section{
+      content{
+        title-card{
+          title-area {
+            slot1{               //LeagueName, Match Round, Live Status
+              single-line {
+                text {
+                  style(Detail_L)
+                  color(Blue)
+                  value("[#{value(match.League)}] ")
+                }
+                spacer {
+                  size(Small)
+                }
+                text {
+                  style(Detail_L_Soft)
+                  value("• [#{value(match.Round)}]")
+                }
+                spacer {
+                  size(Medium)
+                }
+                if(true){
+                // if(m.Live==true){
+                  text {
+                    style(Detail_M)
+                    color(Green)
+                    value("• Live")
+                  }
+                  spacer {
+                    size(Small)
+                  }
+                }
+              }
+            }
+            slot2{              //TossWinner Team
+              single-line {
+                text {
+                  style(Detail_M_Soft)
+                  value("[Toss: #{value(match.TossWonTeam)}]")
+                }
+                spacer {
+                  size(Large)
+                }
+                spacer {
+                  size(Large)
+                }
+              }
+            }
+            slot3 {             //LocalTeam Details
+              single-line {
+                image {
+                  style(Detail_M)
+                  url("#{value(match.LocalTeamDetails.ImageUrl)}")
+                }
+                spacer {
+                  size(Medium)
+                }
+                text {
+                  style(Detail_L)
+                  value("#{value(match.LocalTeamDetails.Name)}")
+                }
+                spacer {
+                  size(Large)
+                }
+                text {
+                  style(Detail_M_Soft)
+                  value("[#{value(match.LocalTeamDetails.Runs)}][ / #{value(match.LocalTeamDetails.Wickets)}]")
+                }
+                spacer {
+                  size(Small)
+                }
+                text {
+                  style(Detail_M_Soft)
+                  value("[ (#{value(match.LocalTeamDetails.Overs)} overs)]")
+                }
+              }
+            }
+            slot4 {             //VisitorTeam Details
+              single-line {
+                image {
+                  style(Detail_M)
+                  url("#{value(match.VisitorTeamDetails.ImageUrl)}")
+                }
+                spacer {
+                  size(Medium)
+                }
+                text {
+                  style(Detail_L)
+                  value("#{value(match.VisitorTeamDetails.Name)}")
+                }
+                spacer {
+                  size(Large)
+                }
+                text {
+                  style(Detail_M_Soft)
+                  value("[#{value(match.VisitorTeamDetails.Runs)}][ / #{value(match.VisitorTeamDetails.Wickets)}]")
+                }
+                spacer {
+                  size(Small)
+                }
+                text {
+                  style(Detail_M_Soft)
+                  value("[ (#{value(match.VisitorTeamDetails.Overs)} overs)]")
+                }
+              }
+            }
+            slot5{              //Match Status(Runs needed to win etc.)
+              paragraph {
+                style(Detail_M_Soft)
+                value("[#{value(match.Note)}]")
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

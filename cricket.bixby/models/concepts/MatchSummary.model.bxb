@@ -1,0 +1,43 @@
+structure (MatchSummary) {
+  description (Score and other details of the match (to output))
+ 
+  property (LocalTeamDetails){
+    type (LocalTeamDetails)
+    min (Required)
+    max (One)
+  }
+  property (VisitorTeamDetails){
+    type (VisitorTeamDetails)
+    min (Required)
+    max (One)
+  }
+  property (Type){
+    type (Type)
+    min (Optional)
+    max (One)
+  }
+  property(League){
+    type(League)
+    min(Optional)
+    max(One)
+  }
+  property (Round){
+    type (Round)
+    min (Optional)
+    max (One)
+  }
+  property (Live){
+    type (Live)
+    min (Required)
+    max (One)
+  }
+  property (Note) {
+    type (Note)
+    min (Optional) max (One)
+  }
+  property (TossWonTeam){
+    type (TossWonTeam)
+    min (Optional)
+    max (One)
+  }
+}

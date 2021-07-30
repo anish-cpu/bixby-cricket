@@ -1,0 +1,13 @@
+// result-view{
+//   match{
+//     MatchSummary(match)
+//   }
+
+//   render {
+//     layout-macro (Match-Details) {
+//       param (match) {
+//         expression (match)
+//       }
+//     }
+//   }
+// }

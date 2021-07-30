@@ -1,0 +1,53 @@
+navigation-support {
+  match: _
+  ordinal-selection-patterns{
+    pattern ("(first)[v:viv.core.OrdinalSelector]")
+    pattern ("(first)[v:viv.core.OrdinalSelector] one")
+    pattern ("the (first)[v:viv.core.OrdinalSelector] one")
+
+    pattern ("yes (first)[v:viv.core.OrdinalSelector]")
+    pattern ("yes (first)[v:viv.core.OrdinalSelector] one")
+    pattern ("yes the (first)[v:viv.core.OrdinalSelector] one")
+
+    pattern ("show me the (first)[v:viv.core.OrdinalSelector] one")
+    pattern ("show the (first)[v:viv.core.OrdinalSelector] one")
+
+    pattern ("result number (one)[v:viv.core.CardinalSelector:1]")
+  }
+  navigation-commands {
+    // page-selection-confirmation{
+    //   affirmative {
+    //     response (yes)
+    //   }
+    //   negative {
+    //     response (no)
+    //     response (nope)
+    //     response(n)
+    //   }
+    // }
+    next {
+      response (next)
+      response (more)
+    }
+    previous {
+      response (previous)
+      response (back)
+    }
+    item-selection-confirmation {
+      affirmative {
+        response(yup)
+        response (yes)
+        response(ok)
+        response(okay)
+      }
+      negative {
+        response (no)
+        response (nope)
+      }
+    }
+    repeat{
+      response(repeat)
+      response(come again)
+    }
+  }
+}

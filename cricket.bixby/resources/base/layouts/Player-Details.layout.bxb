@@ -1,0 +1,67 @@
+layout-macro-def (Player-Details) {
+  params {
+    param (player) {
+      type (PlayerSummary) 
+      min (Required) max (Many)
+    }
+  }
+  content{
+    image-card{
+      image-url("[#{value(player.ImageUrl)}]")
+      image-object-fit (Contain)
+      text-position(Below)
+      title-area {
+        halign (Center)
+        slot1{               // name
+          single-line {
+            text {
+              style(Detail_L)
+              value("#{value(player.Name)}")
+            }
+          }
+        }
+        slot2{
+          single-line{
+            spacer {
+              size(Small)
+            }
+            text {
+              style(Detail_L)
+              color (Blue)
+              value("[• #{value(player.PlayerCountry)}] ")
+            }
+            spacer {
+              size(Small)
+            }
+            text {
+              style(Detail_L_Soft)
+              value("[•#{value(player.PlayingRole)}]")
+            }
+          }
+        }
+        slot3{              //Nationality
+          single-line {
+            text{
+              value("[#{value(player.BattingStyle)} ][• #{value(player.BowlingStyle)}]")
+              style(Detail_M)
+            }
+          }
+        }
+        slot4{
+          single-line{
+            text{
+              value("[Current Age: #{value(player.Age)}]")
+              style(Detail_M_Soft)
+            }
+          }
+        }
+        slot5{
+          paragraph{
+            value("[#{value(player.Profile)}]")
+            style(Detail_M)
+          }
+        }
+      }
+    }
+  }
+}

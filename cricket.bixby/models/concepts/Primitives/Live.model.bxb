@@ -1,0 +1,3 @@
+boolean (Live) {
+  description (true if match is live, else false)
+}

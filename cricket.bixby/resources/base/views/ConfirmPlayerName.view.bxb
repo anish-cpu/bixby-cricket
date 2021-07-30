@@ -1,0 +1,23 @@
+confirmation-view{
+  match {
+    core.Confirmation {
+        confirming {
+          FindPlayer (action)
+        }
+    }
+  }
+  message("Do you want to search #{value(action.PlayerName)}?")
+  confirm-options{
+    label("Yes")
+    
+  }
+  abort-options{
+    label("No")
+    on-abort{
+      intent{
+        goal: FindPlayer 
+
+      }
+    }
+  }
+}

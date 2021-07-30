@@ -1,0 +1,8 @@
+train (t-pj402r3npwd8sfx0pb90vvrix) {
+  utterance ("[g:Hundreds] How many centuries has (Sachin Tendulkar)[v:PlayerName] (scored)[r:Batting] in (ODIs)[r:ODI]?")
+  last-modified (1626360495961)
+}
+train (t-pcn5dx2gp90f0ruy4aoqapmxj) {
+  utterance ("[g:Ave:continue:FindPlayer] What is his (ODI)[r:ODI] (batting)[r:Batting] average?")
+  last-modified (1627017914616)
+}

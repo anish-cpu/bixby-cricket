@@ -1,0 +1,103 @@
+result-view{
+  match{
+    PlayerDetails(player)
+  }
+
+  render {
+    if (size(player)>1){
+      list-of (player) {
+        navigation-mode {
+          if ($handsFree){
+            read-many {
+              page-size (2)
+              list-summary ("I found #{size(player)} players meeting your search.")
+              page-content {
+                page-selection-question(Where you looking for any of these players?)
+                underflow-statement (There is no other player that I showed previously.)
+                item-selection-question (Which one?)
+                overflow-statement (That's all. No more players meet your search.)
+              }
+            }
+          }
+        }
+      
+        where-each (item) {
+          layout-macro (Player-Summary) {
+            param (player) {
+              expression (item)
+            }
+          }
+        }
+      }
+    }
+    else-if(size(player)==1){
+      layout-macro (Player-Details) {
+        param (player) {
+          expression (player)
+        }
+      }
+    }
+    
+    else{
+      layout{
+        section{
+          content{
+            title-card {
+              title-area {
+                halign(Center)
+                slot1 {
+                  paragraph {
+                    style(Title_S)
+                    value("No player found :(")
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // followup{
+  //   if(size(player)==1){
+  //   // if (true){
+  //     prompt{
+  //       dialog("Do you want to view his batting stats?")
+  //       on-confirm{
+  //         intent{
+  //           goal{ 
+  //             Batting
+  //             @context (Continuation)
+  //           }
+  //           // value{$expr(player.Name)}
+  //           // goal
+  //           // route: Batting
+  //         }
+  //       }
+  //       on-deny{
+  //         message(Okay)
+  //       }
+  //     }
+  //   }
+  //   if(size(player)==0){
+  //     prompt{
+  //       dialog("Do you want to search again?")
+  //       on-confirm{
+  //         intent{
+  //           goal{ 
+  //             FindPlayer
+  //           }
+  //           // value{$expr(player.Name)}
+  //           // goal
+  //           route: PlayerName
+  //         }
+  //       }
+  //       on-deny{
+  //         message(Okay)
+  //       }
+  //     }
+  //   }
+  // }
+}
+  
